@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="jumbotron">
+
+            <h1>Polis News App</h1>
+
+            <p style="font-family: 'Times New Roman' "> <b>Hello, <label th:text="${email}"></label> </b></p>
+
+            <ol class="breadcrumb">
+
+                <li class="active">Welcome</li>
+
+            </ol>
+
+            <a style="float: right" href="/logout"><button class="btn btn-default">Logout</button></a>
+
+        </div>
+
+
+
+        <div class="list-group">
+
+            <a href="/top-headlines?source=abc-news" class="list-group-item"> ABC NEWS</a>
+            <a href="/top-headlines?source=bbc-news" class="list-group-item"> BBC NEWS</a>
+            <a href="/top-headlines?source=bleacher-report" class="list-group-item"> Bleacher Report</a>
+            <a href="/top-headlines?source=business-insider" class="list-group-item"> Business Insider</a>
+            <a href="/top-headlines?source=espn" class="list-group-item"> ESPN</a>
+
+        </div>
+    </div>
+
+</body>
+</html>

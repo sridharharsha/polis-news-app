@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Headlines</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<script type="text/javascript"></script>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+
+            <h1>Polis News App</h1>
+
+            <p style="font-family: 'Times New Roman' "> <b>Hello, <label th:text="${email}"></label> </b></p>
+
+            <ol class="breadcrumb">
+
+                <li><a href="/welcome">Welcome</a></li>
+                <li class="active"><label th:text="${source}"></label></li>
+
+            </ol>
+
+            <a style="float: right" href="/logout"><button class="btn btn-default">Logout</button></a>
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered">
+
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Image</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                    <tr th:each="article : ${articles}">
+
+                        <td><a th:href="${article.url}" target="_blank"><label style="cursor: pointer;" th:text="${article.title}"></label></a></td>
+                        <td th:text="${article.description}"></td>
+                        <td><img th:src="${article.urlToImage}" width="400"/></td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>
